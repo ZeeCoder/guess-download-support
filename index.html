@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Attr Support</title>
+</head>
+<body>
+
+    <h1>Download Attr Support</h1>
+
+    <h3>Your user agent:</h3>
+    <div id="UserAgent"></div>
+
+    <h3>Is the download attribute supported?</h3>
+    <div id="SupportGuess"></div>
+
+    <h3>Download button test</h3>
+    <a href="./Download.png" target="_blank" download="download">Click to download</a>
+
+    <script>
+        var isDownloadAttrSupported = 'download' in document.createElement('a');
+
+        document.getElementById('UserAgent').value = navigator.userAgent;
+
+        document.getElementById('SupportGuess').value =
+            isDownloadAttrSupported ? 'Supported' : 'Not Supported';
+    </script>
+
+</body>
+</html>
